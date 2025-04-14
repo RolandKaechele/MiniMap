@@ -48,7 +48,7 @@ The Minimap plugin enhances your RPG Maker MV project by adding a customizable m
    - Enable the plugin in the Plugin Manager.
 
 2. **Configure Plugin Parameters**:
-   - Open the Plugin Manager and adjust the parameters to fit your game's requirements (e.g., minimap size, position, colors).
+   - Open the Plugin Manager and adjust the parameters to fit your game's requirements (e.g. minimap size, position, colors).
 
 3. **Add Metadata**:
    - Use the **Map Properties** Note field to define map types.
@@ -56,10 +56,10 @@ The Minimap plugin enhances your RPG Maker MV project by adding a customizable m
 
 4. **Test the Plugin**:
    - Test the minimap on various maps to ensure it works as expected.
-   - Refer to the [Usage Guide](usage/plugins/MinimapUsage.md) for detailed instructions.
+   - Refer to the [Usage Guide](usage/plugins/Minimap.md) for detailed instructions.
 
 ## Notes
 
 - Ensure compatibility with other plugins by testing thoroughly.
 - Refer to the [API Documentation](api/plugins/Minimap.md) for advanced customization.
-- For additional details on the plugin's architecture, see the [Design Document](design/plugins/<Minimap.md).
+- For additional details on the plugin's architecture, see the [Design Document](design/plugins/Minimap.md).
