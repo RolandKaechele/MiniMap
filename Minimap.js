@@ -3,8 +3,8 @@
  * @param MinimapSize
  * @type number
  * @min 50
- * @max 300
- * @default 150
+ * @max 600
+ * @default 300
  * @desc The size of the minimap (width and height in pixels).
  *
  * @param MinimapPositionX
@@ -87,7 +87,7 @@
 
 (function() {
     const parameters = PluginManager.parameters('Minimap');
-    const minimapSize = Number(parameters['MinimapSize'] || 150);
+    const minimapSize = Number(parameters['MinimapSize'] || 300); // Updated default size
     let minimapX = Number(parameters['MinimapPositionX'] || 10);
     let minimapY = Number(parameters['MinimapPositionY'] || 10);
     const minimapBackgroundOpacity = Number(parameters['MinimapBackgroundOpacity'] || 153);
@@ -280,39 +280,39 @@
             const note = event.event().note.toLowerCase(); // Read the event note for tags
             const name = event.event().name; // Read the event name
 
-            if (note.includes('<npc>') || name.toLowerCase().includes('npc')) {
-                const npcSprite = new Sprite(new Bitmap(5, 5));
-                npcSprite.bitmap.fillRect(0, 0, 5, 5, npcMarkerColor);
-                npcSprite.x = eventX - 2.5; // Center the marker
-                npcSprite.y = eventY - 2.5; // Center the marker
+            if (note.includes('<npc>') ) {
+                const npcSprite = new Sprite(new Bitmap(3, 3)); // Reduced size
+                npcSprite.bitmap.fillRect(0, 0, 3, 3, npcMarkerColor);
+                npcSprite.x = eventX - 1.5; // Center the marker
+                npcSprite.y = eventY - 1.5; // Center the marker
                 this._minimapContainer.addChild(npcSprite);
                 this._npcSprites.push(npcSprite);
-            } else if (note.includes('<enemy>') || name.toLowerCase().includes('enemy')) {
-                const enemySprite = new Sprite(new Bitmap(5, 5));
-                enemySprite.bitmap.fillRect(0, 0, 5, 5, enemyMarkerColor);
-                enemySprite.x = eventX - 2.5; // Center the marker
-                enemySprite.y = eventY - 2.5; // Center the marker
+            } else if (note.includes('<enemy>') ) {
+                const enemySprite = new Sprite(new Bitmap(3, 3)); // Reduced size
+                enemySprite.bitmap.fillRect(0, 0, 3, 3, enemyMarkerColor);
+                enemySprite.x = eventX - 1.5; // Center the marker
+                enemySprite.y = eventY - 1.5; // Center the marker
                 this._minimapContainer.addChild(enemySprite);
                 this._enemySprites.push(enemySprite);
-            } else if (note.includes('<warp>') || name.toLowerCase().includes('warp')) {
-                const warpSprite = new Sprite(new Bitmap(3, 3));
-                warpSprite.bitmap.fillRect(0, 0, 3, 3, warpPointColor);
-                warpSprite.x = eventX - 1.5; // Center the marker
-                warpSprite.y = eventY - 1.5; // Center the marker
+            } else if (note.includes('<warp>') ) {
+                const warpSprite = new Sprite(new Bitmap(2, 2)); // Reduced size
+                warpSprite.bitmap.fillRect(0, 0, 2, 2, warpPointColor);
+                warpSprite.x = eventX - 1; // Center the marker
+                warpSprite.y = eventY - 1; // Center the marker
                 this._minimapContainer.addChild(warpSprite);
                 this._warpPointSprites.push(warpSprite);
-            } else if (note.includes('<item>') || name.toLowerCase().includes('item')) {
-                const itemSprite = new Sprite(new Bitmap(3, 3));
-                itemSprite.bitmap.fillRect(0, 0, 3, 3, itemPointColor);
-                itemSprite.x = eventX - 1.5; // Center the marker
-                itemSprite.y = eventY - 1.5; // Center the marker
+            } else if (note.includes('<item>') ) {
+                const itemSprite = new Sprite(new Bitmap(2, 2)); // Reduced size
+                itemSprite.bitmap.fillRect(0, 0, 2, 2, itemPointColor);
+                itemSprite.x = eventX - 1; // Center the marker
+                itemSprite.y = eventY - 1; // Center the marker
                 this._minimapContainer.addChild(itemSprite);
                 this._itemPointSprites.push(itemSprite);
-            } else if (note.includes('<event>') || name.toLowerCase().includes('event')) {
-                const eventSprite = new Sprite(new Bitmap(3, 3));
-                eventSprite.bitmap.fillRect(0, 0, 3, 3, eventPointColor);
-                eventSprite.x = eventX - 1.5; // Center the marker
-                eventSprite.y = eventY - 1.5; // Center the marker
+            } else if (note.includes('<event>')) {
+                const eventSprite = new Sprite(new Bitmap(2, 2)); // Reduced size
+                eventSprite.bitmap.fillRect(0, 0, 2, 2, eventPointColor);
+                eventSprite.x = eventX - 1; // Center the marker
+                eventSprite.y = eventY - 1; // Center the marker
                 this._minimapContainer.addChild(eventSprite);
                 this._eventPointSprites.push(eventSprite);
             }
